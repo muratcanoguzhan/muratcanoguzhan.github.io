@@ -3,6 +3,7 @@ layout: post
 title: Parsing Text File By Span and Memory
 subtitle: It has been a long time since Span and Memory joined into our world, but I recently had a chance to look at them. 
 tags: [c#, dotnet, span]
+thumbnail-img: ../assets/img/spanparser1.png
 ---
 
 It has been a long time since Span and Memory joined into our world, but I recently had a chance to look at them. If you want to use them you should have at least .Net Core 2.1.
