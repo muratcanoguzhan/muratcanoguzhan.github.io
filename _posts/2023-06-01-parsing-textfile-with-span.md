@@ -1,12 +1,11 @@
 ---
 layout: post
 title: Parsing Text File By Span and Memory
+subtitle: It has been a long time since Span and Memory joined into our world, but I recently had a chance to look at them. 
 tags: [c#, dotnet, span]
-excerpt_separator: <!--more-->
 ---
 
-It has been a long time since Span and Memory joined our world, but I recently had a chance to look at them. If you want to use them you should have at least .Net Core 2.1.
-<!--more-->
+It has been a long time since Span and Memory joined into our world, but I recently had a chance to look at them. If you want to use them you should have at least .Net Core 2.1.
 If you want to get detailed information you can look at [https://docs.microsoft.com/en-us/archive/msdn-magazine/2018/january/csharp-all-about-span-exploring-a-new-net-mainstay](https://docs.microsoft.com/en-us/archive/msdn-magazine/2018/january/csharp-all-about-span-exploring-a-new-net-mainstay)
 So what are we going to do here is we will implement a solution to parsing text files. 
 The first one will be implemented by classic .Net codes and the second one will be implemented by Span and Memory.
