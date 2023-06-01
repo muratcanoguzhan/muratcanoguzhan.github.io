@@ -10,6 +10,10 @@ For example, we have a text file like this;
 
 https://gist.github.com/muratcanoguzhan/23a077d1c5d2f02674bb7765f69d4cc0.js
 
+<script src="https://gist.github.com/muratcanoguzhan/85c3af0680d31779027e8098671a2e03.js"></script>
+
+https://gist.github.com/muratcanoguzhan/85c3af0680d31779027e8098671a2e03.js
+
 And the result should be;
 
 So let's start to write our project;
