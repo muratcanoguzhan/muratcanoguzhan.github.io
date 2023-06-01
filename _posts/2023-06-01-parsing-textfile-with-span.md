@@ -5,7 +5,7 @@ tags: [c#, dotnet, span]
 ---
 
 # Parsing Text File By Span and Memory
-It has been a long time since Span and Memory joined our world, but I recently had a chance to look at them. If you want to use them you should have at least .Net Core 2.1. If you want to get detailed information you can look at https://docs.microsoft.com/en-us/archive/msdn-magazine/2018/january/csharp-all-about-span-exploring-a-new-net-mainstay
+It has been a long time since Span and Memory joined our world, but I recently had a chance to look at them. If you want to use them you should have at least .Net Core 2.1. If you want to get detailed information you can look at [https://docs.microsoft.com/en-us/archive/msdn-magazine/2018/january/csharp-all-about-span-exploring-a-new-net-mainstay](https://docs.microsoft.com/en-us/archive/msdn-magazine/2018/january/csharp-all-about-span-exploring-a-new-net-mainstay)
 So what are we going to do here is we will implement a solution to parsing text files. The first one will be implemented by classic .Net codes and the second one will be implemented by Span and Memory.
 We will write a method and the method will read all of the text inside the file then it will count the occurrences of the words. Like a word how many times used in the text.
 
