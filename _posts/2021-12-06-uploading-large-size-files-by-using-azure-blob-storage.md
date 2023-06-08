@@ -1,12 +1,12 @@
 ---
 layout: post
 title: Uploading Large Size Files By Using Azure Blob Storage
-subtitle: The idea in this text is just how to upload a large file to Azure Blob Storage. So let's directly start with how we can do it. 
+subtitle: The idea in this post is just how to upload a large file to Azure Blob Storage. So let's directly start with how we can do it. 
 tags: [c#, dotnet, azure]
 thumbnail-img: ../assets/img/pokemon-image-in-azure.png
 ---
 
-The idea in this text is just how to upload a large file to Azure Blob Storage. So let's directly start with how we can do it.
+The idea in this post is just how to upload a large file to Azure Blob Storage. So let's directly start with how we can do it.
 
 First, we need to create a storage account in azure [https://portal.azure.com/](https://portal.azure.com/). It is easy to find just type "storage account" into the search box then configure it according to your needs. You can follow up on this link [https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal).
 
