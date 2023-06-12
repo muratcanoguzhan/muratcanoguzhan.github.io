@@ -65,7 +65,8 @@
 
   {% if site.navbar-extra %} {% for file in site.navbar-extra %} {% include {{
   file }} %} {% endfor %} {% endif %} {% if site.avatar and page.show-avatar !=
-  false %} {{ site.avatar }}
+  false %} 
+  <h1>{{ site.avatar }}</h1>
   <!-- <div class="avatar-container">
       <div class="avatar-img-border">
         <a href="{{ '' | absolute_url }}">
