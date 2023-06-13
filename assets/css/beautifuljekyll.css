@@ -374,8 +374,11 @@ img {
 
 @media (min-width: 1200px) {
   .navbar-custom.top-nav-regular .avatar-container {
-    width: 6.25rem;
-    bottom: -1.9375rem;
+    flex: 1 1;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
   }
 
   .navbar-custom.top-nav-regular .avatar-container .avatar-img-border {
