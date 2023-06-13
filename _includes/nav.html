@@ -1,15 +1,40 @@
 <nav
   class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom {% if page.nav-short %}top-nav-short-permanent{% else %}top-nav-regular{% endif %}"
+  style="display: flex; justify-content: center; align-items: center"
 >
   {%- if site.title-img -%}
-  <a class="navbar-brand navbar-brand-logo" href="{{ '' | absolute_url }}"
+  <a
+    style="flex: 1 1"
+    class="navbar-brand navbar-brand-logo"
+    href="{{ '' | absolute_url }}"
     ><img alt="{{ site.title }} Logo" src="{{ site.title-img | relative_url}}"
   /></a>
   {%- elsif site.title -%}
-  <a class="navbar-brand" href="{{ '' | absolute_url }}">{{ site.title }}</a>
+  <a style="flex: 1 1" class="navbar-brand" href="{{ '' | absolute_url }}"
+    >{{ site.title }}</a
+  >
   {%- endif -%}
 
+  <!--avatar-->
+  {% if site.navbar-extra %} {% for file in site.navbar-extra %} {% include {{
+  file }} %} {% endfor %} {% endif %} {% if site.avatar and page.show-avatar !=
+  false %}
+  <div class="avatar-container">
+    <div class="train-animation" style="font-size: 50px; position: absolute">
+      {{ site.avatar }}
+    </div>
+  </div>
+  <!-- <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a href="{{ '' | absolute_url }}">
+            <img alt="Navigation bar avatar" class="avatar-img" src="{{ site.avatar | relative_url }}" />
+          </a>
+        </div>
+      </div> -->
+  {% endif %}
+
   <button
+    style="flex: 1 1"
     class="navbar-toggler"
     type="button"
     data-toggle="collapse"
@@ -21,7 +46,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="main-navbar">
+  <div style="flex: 1 1" class="collapse navbar-collapse" id="main-navbar">
     <ul class="navbar-nav ml-auto">
       {%- for link in site.navbar-links -%} {%- if link[1].first %}
       <li class="nav-item dropdown">
@@ -62,30 +87,6 @@
       {%- endif -%}
     </ul>
   </div>
-
-  {% if site.navbar-extra %} {% for file in site.navbar-extra %} {% include {{
-  file }} %} {% endfor %} {% endif %} {% if site.avatar and page.show-avatar !=
-  false %}
-  <div class="avatar-container">
-    <div
-      class="train-animation"
-      style="
-        font-size: 4rem;
-        transform-origin: center center;
-        padding-left: 25px;
-      "
-    >
-      {{ site.avatar }}
-    </div>
-  </div>
-  <!-- <div class="avatar-container">
-      <div class="avatar-img-border">
-        <a href="{{ '' | absolute_url }}">
-          <img alt="Navigation bar avatar" class="avatar-img" src="{{ site.avatar | relative_url }}" />
-        </a>
-      </div>
-    </div> -->
-  {% endif %}
 </nav>
 
 {% include search.html %}
