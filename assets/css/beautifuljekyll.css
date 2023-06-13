@@ -369,6 +369,10 @@ img {
 
 .train-animation {
   animation: moveLeft 5s linear;
+  font-size: 4rem;
+  /* font-size: 100px; */
+  transform-origin: center center;
+  transform: scale(0.6);
 }
 
 @media (min-width: 1200px) {
