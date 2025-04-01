@@ -1,16 +1,16 @@
 <template>
   <footer class="footer">
     <div class="container">
-      <p>&copy; {{ new Date().getFullYear() }} My Blog. All rights reserved.</p>
+      <p>&copy; {{ new Date().getFullYear() }} Murat Oguzhan. All rights reserved.</p>
       <div class="social-links">
-        <a href="https://github.com" target="_blank" class="social-link" aria-label="GitHub">
+        <a href="https://github.com/muratcanoguzhan" target="_blank" class="social-link" aria-label="GitHub">
           <i class="fab fa-github"></i>
         </a>
-        <a href="https://twitter.com" target="_blank" class="social-link" aria-label="Twitter">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/muratcanoguzhan/" target="_blank" class="social-link" aria-label="LinkedIn">
           <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://bsky.app/profile/muratoguzhan.bsky.social" target="_blank" class="social-link bluesky-link" aria-label="Bluesky">
+          <img src="/bsky-favicon.png" alt="Bluesky" class="bsky-icon" />
         </a>
       </div>
     </div>
@@ -43,15 +43,27 @@ export default {
 .social-links {
   display: flex;
   gap: 1rem;
+  align-items: center;
 }
 
 .social-link {
   color: white;
   font-size: 1.2rem;
   transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
 }
 
 .social-link:hover {
   color: #42b983;
+}
+
+.bluesky-link:hover {
+  opacity: 0.8;
+}
+
+.bsky-icon {
+  width: 19px;
+  height: 19px;
 }
 </style> 
