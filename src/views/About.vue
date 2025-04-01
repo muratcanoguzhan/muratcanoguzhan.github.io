@@ -3,11 +3,11 @@
     <h1>About Me</h1>
     <div class="about-content">
       <div class="profile-image">
-        <img src="https://via.placeholder.com/150" alt="Profile Image" />
+        <img :src="profileImage" alt="Animated Profile Image" />
       </div>
       <div class="bio">
-        <h2>John Doe</h2>
-        <p class="title">Web Developer & Blogger</p>
+        <h2>Murat</h2>
+        <p class="title">Software Developer</p>
         <p>
           Welcome to my blog! I'm passionate about web development, especially Vue.js. 
           I created this blog to share my knowledge and experiences with the world.
@@ -26,8 +26,15 @@
 </template>
 
 <script>
+import profileImage from '@/assets/profile-animated.jpeg'
+
 export default {
-  name: 'AboutView'
+  name: 'AboutView',
+  data() {
+    return {
+      profileImage
+    }
+  }
 }
 </script>
 
@@ -50,8 +57,12 @@ h1 {
 }
 
 .profile-image img {
-  border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  object-fit: contain;
 }
 
 .bio {
