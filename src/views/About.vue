@@ -9,7 +9,7 @@
         <h2>Murat</h2>
         <p class="title">Software Developer</p>
         <p>
-          Welcome to my blog! I'm passionate about web development, especially Vue.js. 
+          Welcome to my blog! I'm passionate about web development, especially SPAs. 
           I created this blog to share my knowledge and experiences with the world.
         </p>
         <p>
@@ -17,7 +17,7 @@
         </p>
         <div class="contact-info">
           <h3>Get in Touch</h3>
-          <p>Email: john.doe@example.com</p>
+          <p>Email: m.c.ogzhan@gmail.com</p>
           <p>Follow me on social media using the links in the footer!</p>
         </div>
       </div>

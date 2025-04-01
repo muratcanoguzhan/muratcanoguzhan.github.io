@@ -6,6 +6,11 @@ import About from '../views/About.vue'
 const routes = [
   {
     path: '/',
+    name: 'About',
+    component: About
+  },
+  {
+    path: '/blog',
     name: 'Home',
     component: Home
   },
@@ -14,11 +19,6 @@ const routes = [
     name: 'BlogPost',
     component: BlogPost,
     props: true
-  },
-  {
-    path: '/about',
-    name: 'About',
-    component: About
   }
 ]
 

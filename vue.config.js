@@ -13,11 +13,7 @@ module.exports = defineConfig({
     static: {
       directory: 'public',
       serveIndex: true,
-      watch: true,
-      // Configure MIME types
-      mimeTypes: {
-        'text/markdown': ['md']
-      }
+      watch: true
     }
   }
 })

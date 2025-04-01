@@ -7,12 +7,12 @@
       <div class="debug-info">
         <p>Post ID: {{ id }}</p>
         <p>Expected file: /blog-posts/{{ id }}.md</p>
-        <router-link to="/" class="back-link">Return to Home</router-link>
+        <router-link to="/blog" class="back-link">Return to Blog Posts</router-link>
       </div>
     </div>
     <div v-else>
       <div class="post-header">
-        <router-link to="/" class="back-link">&larr; Back to Posts</router-link>
+        <router-link to="/blog" class="back-link">&larr; Back to Posts</router-link>
       </div>
       <div class="content" v-html="renderedContent"></div>
     </div>

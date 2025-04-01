@@ -1,10 +1,12 @@
 <template>
   <header class="header">
     <div class="container">
-      <h1 class="logo">My Blog</h1>
+      <router-link to="/" class="logo-link">
+        <h1 class="logo">Murat Oguzhan</h1>
+      </router-link>
       <nav class="nav">
-        <router-link to="/" class="nav-link">Blog Posts</router-link>
-        <router-link to="/about" class="nav-link">About Me</router-link>
+        <router-link to="/blog" class="nav-link">Blog Posts</router-link>
+        <router-link to="/" class="nav-link">About Me</router-link>
       </nav>
     </div>
   </header>
@@ -32,9 +34,19 @@ export default {
   padding: 0 2rem;
 }
 
+.logo-link {
+  text-decoration: none;
+  color: white;
+}
+
 .logo {
   margin: 0;
   font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.logo-link:hover .logo {
+  color: #42b983;
 }
 
 .nav {
