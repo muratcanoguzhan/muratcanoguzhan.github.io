@@ -1,4 +1,14 @@
 [
-  "2021-08-14-parsing-textfile-with-span.md",
-  "2021-12-06-uploading-large-size-files-by-using-azure-blob-storage.md"
+  {
+    "id": "2021-08-14-parsing-textfile-with-span",
+    "title": "Parsing Text Files with Span",
+    "date": "August 14, 2021",
+    "tags": ["C#", ".NET Core", "Span", "Memory", "Performance"]
+  },
+  {
+    "id": "2021-12-06-uploading-large-size-files-by-using-azure-blob-storage",
+    "title": "Uploading Large Size Files by Using Azure Blob Storage",
+    "date": "December 6, 2021",
+    "tags": ["Azure", "Blob Storage", "C#", "File Upload"]
+  }
 ]

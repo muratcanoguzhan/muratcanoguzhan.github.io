@@ -11,6 +11,9 @@
         <div v-for="post in paginatedPosts" :key="post.id" class="blog-card">
           <h2>{{ post.title }}</h2>
           <p class="date">{{ post.date }}</p>
+          <div class="tags">
+            <span v-for="tag in post.tags" :key="tag" class="tag">{{ tag }}</span>
+          </div>
           <p>{{ post.excerpt }}</p>
           <router-link :to="{ name: 'BlogPost', params: { id: post.id }}" class="read-more">
             Read More
@@ -46,7 +49,6 @@ export default {
   data() {
     return {
       blogPosts: [],
-      mdFiles: [],
       loading: true,
       error: null,
       currentPage: 1,
@@ -64,11 +66,11 @@ export default {
     }
   },
   created() {
-    this.fetchAvailableFiles()
+    this.fetchBlogPosts()
   },
   methods: {
-    // Fetch list of available markdown files from index.json
-    async fetchAvailableFiles() {
+    // Fetch blog posts from index.json
+    async fetchBlogPosts() {
       this.loading = true
       this.error = null
       
@@ -79,38 +81,23 @@ export default {
           throw new Error('Failed to fetch blog posts index')
         }
         
-        this.mdFiles = await response.json()
-        console.log(`Found ${this.mdFiles.length} markdown files to load`, this.mdFiles)
+        const posts = await response.json()
+        console.log(`Found ${posts.length} blog posts to load`, posts)
         
-        // Now fetch all blog posts
-        await this.fetchBlogPosts()
-      } catch (err) {
-        console.error('Error fetching blog post index:', err)
-        this.error = 'Failed to load blog posts. Please try again later.'
-        this.loading = false
-      }
-    },
-    
-    async fetchBlogPosts() {
-      try {
-        let posts = []
-        
-        // Process all Markdown files from the index
-        for (const filename of this.mdFiles) {
+        // Process all posts from the index to add excerpt
+        for (const post of posts) {
           try {
-            const id = filename.replace('.md', '')
-            const response = await fetch(`/blog-posts/${filename}`)
+            const response = await fetch(`/blog-posts/${post.id}.md`)
             
             if (!response.ok) {
-              console.warn(`Could not load blog post: ${filename}`)
+              console.warn(`Could not load blog post: ${post.id}.md`)
               continue
             }
             
             const mdContent = await response.text()
-            const postData = this.extractMetadataFromMarkdown(mdContent, id)
-            posts.push(postData)
+            post.excerpt = this.extractExcerptFromMarkdown(mdContent)
           } catch (err) {
-            console.warn(`Error processing ${filename}:`, err)
+            console.warn(`Error processing ${post.id}:`, err)
           }
         }
         
@@ -133,27 +120,12 @@ export default {
       }
     },
     
-    extractMetadataFromMarkdown(mdContent, id) {
-      // Extract title (first heading)
-      const titleMatch = mdContent.match(/^#\s+(.+)$/m)
-      const title = titleMatch ? titleMatch[1] : id
-      
-      // Extract date
-      const dateMatch = mdContent.match(/Date:\s+(.+)$/m)
-      const date = dateMatch ? dateMatch[1] : 'Unknown Date'
-      
-      // Extract excerpt (first paragraph after a heading)
-      const paragraphMatch = mdContent.match(/##.+\n\n(.+?)(\n\n|$)/s)
-      const excerpt = paragraphMatch 
+    extractExcerptFromMarkdown(mdContent) {
+      // Extract excerpt (first paragraph)
+      const paragraphMatch = mdContent.match(/^(.+?)(\n\n|$)/s)
+      return paragraphMatch 
         ? paragraphMatch[1].substring(0, 150) + '...' 
-        : mdContent.substring(0, 150).replace(/^#.+\n/, '') + '...'
-      
-      return {
-        id,
-        title,
-        date,
-        excerpt: excerpt.trim()
-      }
+        : mdContent.substring(0, 150) + '...'
     }
   }
 }
@@ -193,7 +165,22 @@ h1 {
 .date {
   color: #7f8c8d;
   font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   margin-bottom: 1rem;
+}
+
+.tag {
+  background-color: #f0f0f0;
+  color: #2c3e50;
+  font-size: 0.8rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
 }
 
 .read-more {

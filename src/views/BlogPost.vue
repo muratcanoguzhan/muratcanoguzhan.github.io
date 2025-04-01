@@ -13,6 +13,11 @@
     <div v-else>
       <div class="post-header">
         <router-link to="/blog" class="back-link">&larr; Back to Posts</router-link>
+        <h1>{{ postData.title }}</h1>
+        <p class="date">{{ postData.date }}</p>
+        <div class="tags">
+          <span v-for="tag in postData.tags" :key="tag" class="tag">{{ tag }}</span>
+        </div>
       </div>
       <div class="content" v-html="renderedContent"></div>
     </div>
@@ -33,6 +38,11 @@ export default {
   data() {
     return {
       content: '',
+      postData: {
+        title: '',
+        date: '',
+        tags: []
+      },
       loading: true,
       error: null
     }
@@ -56,21 +66,48 @@ export default {
     }
   },
   mounted() {
-    this.fetchBlogPost()
+    this.fetchPostData()
   },
   methods: {
-    async fetchBlogPost() {
+    async fetchPostData() {
       this.loading = true
       this.error = null
       
       try {
-        console.log(`Fetching blog post: ${this.id}.md`)
+        // First, fetch the metadata from index.json
+        const indexResponse = await fetch('/blog-posts/index.json')
+        
+        if (!indexResponse.ok) {
+          throw new Error('Failed to fetch blog posts index')
+        }
+        
+        const posts = await indexResponse.json()
+        const post = posts.find(p => p.id === this.id)
+        
+        if (!post) {
+          throw new Error(`Blog post with ID ${this.id} not found in index`)
+        }
+        
+        this.postData = post
+        
+        // Now fetch the actual blog post content
+        await this.fetchBlogPost()
+      } catch (err) {
+        console.error('Error fetching post data:', err)
+        this.error = `Failed to load the blog post "${this.id}". ${err.message}`
+        this.loading = false
+      }
+    },
+    
+    async fetchBlogPost() {
+      try {
+        console.log(`Fetching blog post content: ${this.id}.md`)
         // Add a cache-busting parameter to prevent browser caching
         const response = await fetch(`/blog-posts/${this.id}.md?_=${new Date().getTime()}`)
         
         if (!response.ok) {
-          console.error(`Blog post not found: ${this.id}.md, status: ${response.status}`)
-          throw new Error(`Blog post not found (${response.status})`)
+          console.error(`Blog post content not found: ${this.id}.md, status: ${response.status}`)
+          throw new Error(`Blog post content not found (${response.status})`)
         }
         
         this.content = await response.text()
@@ -78,8 +115,8 @@ export default {
         
         this.loading = false
       } catch (err) {
-        console.error('Error fetching blog post:', err)
-        this.error = `Failed to load the blog post "${this.id}". Please check that the file exists.`
+        console.error('Error fetching blog post content:', err)
+        this.error = `Failed to load the blog post content for "${this.id}". Please check that the file exists.`
         this.loading = false
       }
     }
@@ -106,6 +143,32 @@ export default {
 
 .post-header {
   margin-bottom: 2rem;
+}
+
+.post-header h1 {
+  font-size: 2.5rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.date {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tag {
+  background-color: #f0f0f0;
+  color: #2c3e50;
+  font-size: 0.8rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
 }
 
 .back-link {
