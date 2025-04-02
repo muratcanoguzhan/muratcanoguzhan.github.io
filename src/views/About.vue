@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import profileImage from '@/assets/profile-animated.jpeg'
+import profileImage from '@/assets/profile.png'
 
 export default {
   name: 'AboutView',

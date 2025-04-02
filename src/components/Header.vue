@@ -5,7 +5,7 @@
         <h1 class="logo">Murat Oguzhan</h1>
       </router-link>
       <nav class="nav">
-        <router-link to="/blog" class="nav-link">Blog Posts</router-link>
+        <router-link to="/blog" class="nav-link">Blog</router-link>
         <router-link to="/" class="nav-link">About Me</router-link>
       </nav>
     </div>

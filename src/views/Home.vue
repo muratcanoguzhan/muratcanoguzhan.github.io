@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <h1>Blog Posts</h1>
     <div v-if="loading" class="loading">Loading blog posts...</div>
     <div v-else-if="error" class="error">{{ error }}</div>
     <div v-else-if="blogPosts.length === 0" class="no-posts">

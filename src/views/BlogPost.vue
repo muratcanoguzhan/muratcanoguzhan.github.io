@@ -7,7 +7,7 @@
       <div class="debug-info">
         <p>Post ID: {{ id }}</p>
         <p>Expected file: /blog-posts/{{ id }}.md</p>
-        <router-link to="/blog" class="back-link">Return to Blog Posts</router-link>
+        <router-link to="/blog" class="back-link">Return to Blog</router-link>
       </div>
     </div>
     <div v-else>
