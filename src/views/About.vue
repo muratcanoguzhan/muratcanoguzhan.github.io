@@ -58,7 +58,7 @@ h1 {
 
 .profile-image img {
   width: 100%;
-  max-width: 300px;
+  max-width: clamp(150px, 40vw, 300px);
   height: auto;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
@@ -105,6 +105,18 @@ h3 {
   
   .profile-image {
     margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-image img {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 320px) {
+  .profile-image img {
+    max-width: 150px;
   }
 }
 </style> 
