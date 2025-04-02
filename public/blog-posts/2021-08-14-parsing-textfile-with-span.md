@@ -157,11 +157,11 @@ public async Task OnPostUploadAsync()
 
 After injecting the list of IFileParser we watched them on a higher than 50MB text file and the result is an average of 7 seconds with MemoryParser.
 
-![Crepe](./assets/img/spanparser1.png)
+![Crepe](/img/spanparser1.png)
 
 Also, if you look at diagnostic tools you can see that CPU usage is less than the classic one.
 If you try on a file larger than 450MB you can see below that it takes %50 shorter than the classic one. And these results are not got on the released version they get on the debug version.
 
-![Crepe](./assets/img/spanparser2.png)
+![Crepe](/img/spanparser2.png)
 
 Note: If there is any problem with my codes don't hesitate to comment about it.
