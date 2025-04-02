@@ -54,4 +54,4 @@ After getting the container we need to decide where to place our file. We can up
 So we stream the file by buffering 2048 bytes you can change this because the aim is to upload large files. Here each buffer is equal to a stage. We keep stages in a list then we are committing them to azure. Then we can see the file in our azure portal in the pokemons container. It is not important how large your file is because with the help of block blob we divide it into the stage blocks and by keeping their base64BlockIds we are committing the block blob as you see in the code.
 
 Here;
-![Pokemon](/assets/img/pokemon-image-in-azure.png)
+![Pokemon](./assets/img/pokemon-image-in-azure.png)
