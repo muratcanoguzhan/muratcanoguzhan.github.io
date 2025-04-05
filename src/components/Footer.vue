@@ -9,7 +9,7 @@
         <a href="https://www.linkedin.com/in/muratcanoguzhan/" target="_blank" class="social-link" aria-label="LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
-        <a href="https://bsky.app/profile/muratoguzhan.bsky.social" target="_blank" class="social-link bluesky-link" aria-label="Bluesky">
+        <a href="https://bsky.app/profile/muratoguzhan.com" target="_blank" class="social-link bluesky-link" aria-label="Bluesky">
           <img src="/bsky-favicon.png" alt="Bluesky" class="bsky-icon" />
         </a>
       </div>
