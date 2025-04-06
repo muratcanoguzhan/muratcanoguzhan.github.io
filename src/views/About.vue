@@ -46,7 +46,7 @@ export default {
 }
 
 h1 {
-  color: #2c3e50;
+  color: var(--text-color);
   margin-bottom: 2rem;
 }
 
@@ -67,15 +67,17 @@ h1 {
 
 .bio {
   flex: 1;
+  color: var(--text-color);
 }
 
 h2 {
   margin-top: 0;
-  color: #2c3e50;
+  color: var(--text-color);
 }
 
 .title {
-  color: #7f8c8d;
+  color: var(--text-color);
+  opacity: 0.7;
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
 }
@@ -83,16 +85,17 @@ h2 {
 p {
   margin-bottom: 1rem;
   line-height: 1.6;
+  color: var(--text-color);
 }
 
 .contact-info {
   margin-top: 2rem;
   padding-top: 1.5rem;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid var(--border-color);
 }
 
 h3 {
-  color: #2c3e50;
+  color: var(--text-color);
   margin-bottom: 1rem;
 }
 

@@ -138,7 +138,7 @@ export default {
 }
 
 h1 {
-  color: #2c3e50;
+  color: var(--text-color);
   margin-bottom: 2rem;
 }
 
@@ -150,10 +150,11 @@ h1 {
 }
 
 .blog-card {
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 1.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 .blog-card:hover {
@@ -175,8 +176,8 @@ h1 {
 }
 
 .tag {
-  background-color: #f0f0f0;
-  color: #2c3e50;
+  background-color: var(--border-color);
+  color: var(--text-color);
   font-size: 0.8rem;
   padding: 0.2rem 0.6rem;
   border-radius: 12px;
@@ -185,7 +186,7 @@ h1 {
 .read-more {
   display: inline-block;
   margin-top: 1rem;
-  color: #42b983;
+  color: var(--accent-color);
   text-decoration: none;
   font-weight: 500;
 }
@@ -217,7 +218,7 @@ h1 {
 }
 
 .pagination-btn {
-  background-color: #42b983;
+  background-color: var(--accent-color);
   color: white;
   border: none;
   padding: 0.5rem 1rem;
@@ -228,7 +229,8 @@ h1 {
 }
 
 .pagination-btn:hover:not(:disabled) {
-  background-color: #3aa876;
+  background-color: var(--accent-color);
+  opacity: 0.9;
 }
 
 .pagination-btn:disabled {

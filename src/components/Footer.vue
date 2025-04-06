@@ -25,8 +25,8 @@ export default {
 
 <style scoped>
 .footer {
-  background-color: #2c3e50;
-  color: white;
+  background-color: var(--header-bg);
+  color: var(--header-text);
   padding: 1.5rem 0;
   margin-top: auto;
 }
@@ -47,7 +47,7 @@ export default {
 }
 
 .social-link {
-  color: white;
+  color: var(--header-text);
   font-size: 1.2rem;
   transition: color 0.3s ease;
   display: flex;
@@ -55,7 +55,7 @@ export default {
 }
 
 .social-link:hover {
-  color: #42b983;
+  color: var(--accent-color);
 }
 
 .bluesky-link:hover {

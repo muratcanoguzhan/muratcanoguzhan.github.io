@@ -148,6 +148,7 @@ export default {
 .post-header h1 {
   font-size: 2.5rem;
   margin: 1rem 0 0.5rem;
+  color: var(--text-color);
 }
 
 .date {
@@ -164,8 +165,8 @@ export default {
 }
 
 .tag {
-  background-color: #f0f0f0;
-  color: #2c3e50;
+  background-color: var(--border-color);
+  color: var(--text-color);
   font-size: 0.8rem;
   padding: 0.2rem 0.6rem;
   border-radius: 12px;
@@ -173,45 +174,48 @@ export default {
 
 .back-link {
   display: inline-block;
-  color: #2c3e50;
+  color: var(--text-color);
   text-decoration: none;
   margin-bottom: 1rem;
 }
 
 .back-link:hover {
-  color: #42b983;
+  color: var(--accent-color);
 }
 
 /* Global styles for rendered markdown content */
 .content {
   line-height: 1.6;
+  color: var(--text-color);
 }
 
 .content :deep(h1) {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
-  color: #2c3e50;
+  color: var(--text-color);
 }
 
 .content :deep(h2) {
   font-size: 1.8rem;
   margin: 2rem 0 1rem;
-  color: #2c3e50;
+  color: var(--text-color);
 }
 
 .content :deep(h3) {
   font-size: 1.5rem;
   margin: 1.5rem 0 0.8rem;
-  color: #2c3e50;
+  color: var(--text-color);
 }
 
 .content :deep(p) {
   margin-bottom: 1.5rem;
+  color: var(--text-color);
 }
 
 .content :deep(ul), .content :deep(ol) {
   margin-bottom: 1.5rem;
   padding-left: 2rem;
+  color: var(--text-color);
 }
 
 .content :deep(li) {
@@ -219,28 +223,31 @@ export default {
 }
 
 .content :deep(blockquote) {
-  border-left: 4px solid #42b983;
+  border-left: 4px solid var(--accent-color);
   padding-left: 1rem;
   margin-left: 0;
   margin-right: 0;
   font-style: italic;
-  color: #777;
+  color: var(--text-color);
+  opacity: 0.8;
 }
 
 .content :deep(pre) {
-  background-color: #f8f8f8;
+  background-color: var(--border-color);
   padding: 1rem;
   border-radius: 4px;
   overflow-x: auto;
   margin-bottom: 1.5rem;
+  color: var(--text-color);
 }
 
 .content :deep(code) {
   font-family: monospace;
-  background-color: #f8f8f8;
+  background-color: var(--border-color);
   padding: 2px 4px;
   border-radius: 3px;
   font-size: 0.9em;
+  color: var(--text-color);
 }
 
 .content :deep(img) {
@@ -251,7 +258,7 @@ export default {
 }
 
 .content :deep(a) {
-  color: #42b983;
+  color: var(--accent-color);
   text-decoration: none;
 }
 
@@ -261,7 +268,7 @@ export default {
 
 .content :deep(hr) {
   border: none;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid var(--border-color);
   margin: 2rem 0;
 }
 
@@ -272,12 +279,13 @@ export default {
 }
 
 .content :deep(th), .content :deep(td) {
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--border-color);
   padding: 0.5rem;
   text-align: left;
+  color: var(--text-color);
 }
 
 .content :deep(th) {
-  background-color: #f8f8f8;
+  background-color: var(--border-color);
 }
 </style> 
