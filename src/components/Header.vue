@@ -37,6 +37,7 @@ export default {
   background-color: var(--header-bg);
   color: var(--header-text);
   padding: 1rem 0;
+  width: 100%;
 }
 
 .container {
@@ -45,7 +46,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 
 .logo-link {
@@ -96,5 +97,43 @@ export default {
 .theme-toggle:hover {
   color: var(--accent-color);
   transform: rotate(15deg);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 0.5rem;
+    gap: 0.75rem;
+  }
+  
+  .logo {
+    font-size: 1.25rem;
+  }
+  
+  .nav {
+    width: 100%;
+    justify-content: space-around;
+    gap: 0.75rem;
+  }
+  
+  .nav-link {
+    font-size: 0.95rem;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 320px) {
+  .nav {
+    gap: 0.5rem;
+  }
+  
+  .nav-link {
+    font-size: 0.85rem;
+  }
+  
+  .theme-toggle {
+    font-size: 1rem;
+  }
 }
 </style> 
