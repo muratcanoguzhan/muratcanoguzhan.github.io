@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import BlogPost from '../views/BlogPost.vue'
 import About from '../views/About.vue'
+import PrivacyPolicy from '../views/PrivacyPolicy.vue'
 
 const routes = [
   {
@@ -19,6 +20,12 @@ const routes = [
     name: 'BlogPost',
     component: BlogPost,
     props: true
+  },
+  {
+    path: '/privacy-policy',
+    name: 'PrivacyPolicy',
+    component: PrivacyPolicy,
+    meta: { layoutFree: true }
   }
 ]
 

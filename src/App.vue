@@ -1,10 +1,10 @@
 <template>
   <div id="app" :class="{ 'dark-mode': isDarkMode }">
-    <Header :isDarkMode="isDarkMode" @toggle-dark-mode="toggleDarkMode" />
-    <main class="main-content">
+    <Header v-if="!isLayoutFree" :isDarkMode="isDarkMode" @toggle-dark-mode="toggleDarkMode" />
+    <main class="main-content" :class="{ 'layout-free': isLayoutFree }">
       <router-view/>
     </main>
-    <Footer />
+    <Footer v-if="!isLayoutFree" />
   </div>
 </template>
 
@@ -21,6 +21,11 @@ export default {
   data() {
     return {
       isDarkMode: false
+    }
+  },
+  computed: {
+    isLayoutFree() {
+      return this.$route.meta && this.$route.meta.layoutFree;
     }
   },
   created() {
@@ -103,6 +108,11 @@ body {
 
 .main-content {
   flex: 1;
+}
+
+.layout-free {
+  padding: 0;
+  margin: 0;
 }
 
 a {
