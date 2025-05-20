@@ -147,18 +147,10 @@ export default {
 }
 </script>
 
-<style>
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #ffffff;
-  color: #333333;
-}
-
+<style scoped>
 .privacy-policy {
   padding: 2rem 0;
+  color: var(--text-color);
 }
 
 .container {
@@ -168,14 +160,14 @@ html, body {
 }
 
 h1, h2, h3, h4 {
-  color: #333333;
+  color: var(--heading-color, var(--text-color));
   margin-top: 1.5rem;
   margin-bottom: 1rem;
 }
 
 h1 {
   font-size: 2rem;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: 0.5rem;
 }
 
@@ -208,7 +200,7 @@ li {
 }
 
 a {
-  color: #42b983;
+  color: var(--accent-color);
   text-decoration: none;
 }
 
