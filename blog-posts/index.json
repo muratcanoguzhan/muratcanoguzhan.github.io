@@ -10,5 +10,11 @@
     "title": "Uploading Large Size Files by Using Azure Blob Storage",
     "date": "December 6, 2021",
     "tags": ["Azure", "Blob Storage", "C#", "File Upload"]
+  },
+  {
+    "id": "2025-05-21-specification-pattern-dotnet",
+    "title": "Specification Pattern in .NET",
+    "date": "May 21, 2025",
+    "tags": ["Specification Pattern", "C#", "dotnet"]
   }
 ]
