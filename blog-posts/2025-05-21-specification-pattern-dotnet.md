@@ -1,4 +1,4 @@
-# Clean Filtering in .NET – Specification Pattern (Custom and Ardalis)
+# Clean Filtering in .NET – Specification Pattern
 
 Sometimes I don’t want to shove filtering logic all over the place — not in my controllers, not in services, and especially not tangled inside repositories. That’s where the **Specification Pattern** steps in. It gives you a clean, reusable way to describe business rules or queries.
 
