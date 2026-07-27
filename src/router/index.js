@@ -3,6 +3,7 @@ import Home from '../views/Home.vue'
 import BlogPost from '../views/BlogPost.vue'
 import About from '../views/About.vue'
 import PrivacyPolicy from '../views/PrivacyPolicy.vue'
+import NestlyPrivacyPolicy from '../views/NestlyPrivacyPolicy.vue'
 
 const routes = [
   {
@@ -25,6 +26,12 @@ const routes = [
     path: '/privacy-policy',
     name: 'PrivacyPolicy',
     component: PrivacyPolicy,
+    meta: { layoutFree: true }
+  },
+  {
+    path: '/nestly-privacy-policy',
+    name: 'NestlyPrivacyPolicy',
+    component: NestlyPrivacyPolicy,
     meta: { layoutFree: true }
   }
 ]
